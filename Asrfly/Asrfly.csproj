@@ -1,0 +1,113 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<UseWindowsForms>true</UseWindowsForms>
+		<Authors>MOUSSA.MMS7077@GMAIL.COM</Authors>
+		<Description>هو اداة ذكية وبسيطة لمتابعة صرفيات المشاريع</Description>
+		<Copyright>جميع الحقوق محفوظة لLمنلبرمج  2025</Copyright>
+		<ApplicationIcon>Asrfly.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<WarningLevel>2</WarningLevel>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="Asrfly.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ClosedXML" Version="0.100.3" />
+		<PackageReference Include="FastMember" Version="1.5.0" />
+		<!-- تم تحديث المكتبات إلى 8.0.10 لتتوافق مع التحديثات -->
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="8.0.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Npgsql" Version="8.0.0" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+		
+		<PackageReference Include="Supabase" Version="1.1.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Asrfly.Core\Asrfly.Core.csproj" />
+		<ProjectReference Include="..\Asrfly.Data\Asrfly.Data.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Gui\GuiCustomers\AddCustomersForm.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Update="Gui\GuiSystemRecords\RecordsUserControl.cs" />
+		<Compile Update="Gui\GuiUsers\UserLoginForm.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Update="Gui\GuiUsers\AddUserForm.cs" />
+		<Compile Update="Gui\GuiUsers\UsersControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Gui\GuiIncome\AddIncomeForm.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Update="Gui\GuiIncome\IncomeUserControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Gui\GuiOutcome\AddOutcomeForm.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Update="Gui\GuiOutcome\OutcomeUserControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Gui\GuiProjects\AddProjectForm.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Update="Gui\GuiProjects\ProjectsUserControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Gui\GuiSuppliers\AddSuppliersForm.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Update="Gui\GuiSuppliers\SuppliersUserControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Gui\GuiCustomers\CustomersUserControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+</Project>
